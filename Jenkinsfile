@@ -3,7 +3,7 @@ pipeline {
     agent any
     triggers {
         // This triggers the pipeline on every push to main
-        pollSCM('H/2 * * * *')
+        pollSCM('* * * * *')
     }
     stages {
         stage('Read and Execute tests') {
