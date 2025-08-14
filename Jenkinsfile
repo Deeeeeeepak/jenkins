@@ -1,6 +1,13 @@
 import groovy.json.JsonSlurper
 pipeline {
     agent any
+        parameters {
+        string(name: 'Tags', defaultValue: 'JenkinsTask')
+    }
+    triggers {
+        // This triggers the pipeline on every push to main
+        pollSCM('* * * * *')
+    }
     stages {
         stage('Read and Execute tests') {
             steps {
