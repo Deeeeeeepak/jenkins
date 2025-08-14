@@ -5,7 +5,6 @@ pipeline {
         string(name: 'Tags', defaultValue: 'JenkinsTask')
     }
     triggers {
-        // This triggers the pipeline on every push to main
         pollSCM('* * * * *')
     }
     stages {
